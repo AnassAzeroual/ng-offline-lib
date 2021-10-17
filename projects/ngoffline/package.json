@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/AnassAzeroual/ng-cryptostore-lib"
+    "url": "https://github.com/AnassAzeroual/ng-offline-lib#About"
   },
   "peerDependencies": {
     "@angular/common": "^12.2.0",
