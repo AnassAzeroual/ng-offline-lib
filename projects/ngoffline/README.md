@@ -1,24 +1,54 @@
-# Ngoffline
+# MyWorkspace
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 
-## Code scaffolding
+## Table of Contents
 
-Run `ng generate component component-name --project ngoffline` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngoffline`.
-> Note: Don't forget to add `--project ngoffline` or else it will be added to the default project in your `angular.json` file. 
+- [About](#About)
+- [Imports](#Imports)
+- [Usage](#Usage)
 
-## Build
+## About
+this package used to detect offline and online status and show or hide messages based on network status 
+## Imports 
 
-Run `ng build ngoffline` to build the project. The build artifacts will be stored in the `dist/` directory.
+```js
 
-## Publishing
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    ...
+    NgofflineModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 
-After building your library with `ng build ngoffline`, go to the dist folder `cd dist/ngoffline` and run `npm publish`.
 
-## Running unit tests
+```
 
-Run `ng test ngoffline` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Usage
 
-## Further help
+```html
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<ngoffline></ngoffline>
+
+```
+The default message is 'You are not connected', but you can change it
+
+```html
+<ngoffline message="Custom message"></ngoffline>
+
+```
+You can use directive to display or hide any html selector 
+
+```html
+
+<div ngoffline>
+  this message will be displayed only if the status is offline
+</div>
+
+```
