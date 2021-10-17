@@ -1,6 +1,22 @@
 {
   "name": "@devtips/ngoffline",
   "version": "1.0.10",
+  "author": "Anass Azeroual <azeroual.anass2015@gmail.com> (https://github.com/AnassAzeroual)",
+  "license": "MIT",
+  "keywords": [
+    "off",
+    "line",
+    "offline",
+    "connection",
+    "connexion",
+    "devtips",
+    "ngoffline",
+    "@devtips/ngoffline"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnassAzeroual/ng-cryptostore-lib"
+  },
   "peerDependencies": {
     "@angular/common": "^12.2.0",
     "@angular/core": "^12.2.0"
