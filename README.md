@@ -34,19 +34,19 @@ export class AppModule { }
 
 ```html
 
-<lib-ngoffline message="You are not connected"></lib-ngoffline>
+<ngoffline message="You are not connected"></ngoffline>
 
 ```
 default message is 'You are not connected', but you can change it
 
 ```html
-<lib-ngoffline message="Custom message"></lib-ngoffline>
+<ngoffline message="Custom message"></ngoffline>
 
 ```
 
 ```html
 
-<div ngOffline>
+<div ngoffline>
   this message will be displayed only if the status is offline
 </div>
 

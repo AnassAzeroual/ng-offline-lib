@@ -1,7 +1,7 @@
 import { Component, Directive, ElementRef, Input } from '@angular/core';
 
 @Component({
-  selector: 'lib-ngoffline',
+  selector: 'ngoffline',
   template: `
     <div id="box--ngoffline" class="box" *ngIf="!onLine">
       <div class="centreMessage">
@@ -35,7 +35,7 @@ export class NgOfflineComponent {
 }
 
 @Directive({
-  selector: '[ngOffline]',
+  selector: '[ngoffline]',
 })
 export class NgOfflineDirective {
   _el: any;
