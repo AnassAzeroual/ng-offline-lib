@@ -34,7 +34,13 @@ export class AppModule { }
 
 ```html
 
-<lib-ngoffline></lib-ngoffline>
+<lib-ngoffline message="You are not connected"></lib-ngoffline>
+
+```
+default message is 'You are not connected', but you can change it
+
+```html
+<lib-ngoffline message="Custom message"></lib-ngoffline>
 
 ```
 
