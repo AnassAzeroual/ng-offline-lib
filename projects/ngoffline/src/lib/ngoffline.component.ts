@@ -40,16 +40,15 @@ export class NgOfflineDirective {
   onLine: boolean = true;
   constructor(el: ElementRef) {
     this._el = el;
+    this.goOnline();
     window.addEventListener('online', (): void => {
       // 🔥 we're back online!
       this.goOnline();
-      console.log("status1 : ",this.onLine);
     });
 
     window.addEventListener('offline', (): void => {
       // 😱 oh no!
       this.goOffline();
-      console.log("status2 : ",this.onLine);
     });
   }
 
