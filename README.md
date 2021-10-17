@@ -34,15 +34,16 @@ export class AppModule { }
 
 ```html
 
-<ngoffline message="You are not connected"></ngoffline>
+<ngoffline></ngoffline>
 
 ```
-default message is 'You are not connected', but you can change it
+The default message is 'You are not connected', but you can change it
 
 ```html
 <ngoffline message="Custom message"></ngoffline>
 
 ```
+You can use directive to display or hide any html selector 
 
 ```html
 
