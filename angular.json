@@ -3,5 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ngoffline": {
+      "projectType": "library",
+      "root": "projects/ngoffline",
+      "sourceRoot": "projects/ngoffline/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngoffline/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngoffline/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngoffline/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngoffline/src/test.ts",
+            "tsConfig": "projects/ngoffline/tsconfig.spec.json",
+            "karmaConfig": "projects/ngoffline/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngoffline"
 }
