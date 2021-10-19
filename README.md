@@ -52,3 +52,19 @@ You can use directive to display or hide any html selector
 </div>
 
 ```
+Network status output 
+return 'false' if the status Offline
+
+```html
+<ngoffline (isOnline)="checkNetworkStatus($event)"></ngoffline>
+
+```
+Or in the directive
+
+```html
+
+<div ngoffline (isOnline)="checkNetworkStatus($event)">
+  this message will be displayed only if the status is offline
+</div>
+
+```
