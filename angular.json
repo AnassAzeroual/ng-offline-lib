@@ -33,6 +33,109 @@
           }
         }
       }
+    },
+    "offlineDemo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/offline-demo",
+      "sourceRoot": "projects/offline-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/offlineDemo",
+            "index": "projects/offline-demo/src/index.html",
+            "main": "projects/offline-demo/src/main.ts",
+            "polyfills": "projects/offline-demo/src/polyfills.ts",
+            "tsConfig": "projects/offline-demo/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/offline-demo/src/favicon.ico",
+              "projects/offline-demo/src/assets"
+            ],
+            "styles": [
+              "projects/offline-demo/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/offline-demo/src/environments/environment.ts",
+                  "with": "projects/offline-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "offlineDemo:build:production"
+            },
+            "development": {
+              "browserTarget": "offlineDemo:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "offlineDemo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/offline-demo/src/test.ts",
+            "polyfills": "projects/offline-demo/src/polyfills.ts",
+            "tsConfig": "projects/offline-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/offline-demo/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/offline-demo/src/favicon.ico",
+              "projects/offline-demo/src/assets"
+            ],
+            "styles": [
+              "projects/offline-demo/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngoffline"
