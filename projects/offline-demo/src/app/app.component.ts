@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'offlineDemo';
+  status:boolean = true
+  checkNetworkStatus(e:boolean)
+  {
+    this.status = e;
+  }
 }

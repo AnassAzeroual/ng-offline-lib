@@ -1,0 +1,186 @@
+span.dot {
+  font-size: 121px;
+  line-height: 0;
+}
+
+.connected {
+  .start-button {
+    a {
+      color: #fff;
+      &:hover {
+        color: #6afff3 !important;
+      }
+      .start-ring {
+        border: 2px #8bc34a solid;
+      }
+      .start-background {
+        background-color: #cddc39;
+      }
+      .start-border {
+        background-color: #8bc34a;
+        background-image: linear-gradient(#8bc34a, #4caf50),
+          linear-gradient(to bottom, #33691e, #7cb342);
+      }
+      .start-text {
+        color: green;
+      }
+    }
+  }
+}
+.offline {
+  .start-button {
+    a {
+      color: #fff;
+      &:hover {
+        color: #6afff3 !important;
+      }
+      .start-ring {
+        border: 2px #e91e63 solid;
+      }
+      .start-background {
+        background-color: #e91e63;
+      }
+      .start-border {
+        background-color: #e91e63;
+        background-image: linear-gradient(#8f0034, #880e4f),
+          linear-gradient(to bottom, #b71c1c, #e57373);
+      }
+      .start-text {
+        color: red;
+      }
+    }
+  }
+}
+
+.start-button {
+  text-align: center;
+  white-space: nowrap;
+  /* position: absolute; */
+  width: 100%;
+  top: 90px;
+  margin: 0;
+  a {
+    z-index: 1;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-size: 40px;
+    font-size: 4rem;
+    font-weight: 500;
+    box-sizing: border-box;
+    position: relative;
+    padding: 0;
+    width: 180px;
+    height: 180px;
+    line-height: 182px;
+    border-radius: 180px;
+    outline: 0;
+    transform: translateY(0);
+    transform-origin: center center;
+    border-width: 0;
+    &:hover {
+      text-decoration: none !important;
+      outline: 0 !important;
+    }
+    .start-ring {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 180px;
+      height: 180px;
+      border-radius: 180px;
+      box-sizing: border-box;
+      opacity: 0;
+      animation-name: start-ring;
+      animation-delay: 3.5s;
+      animation-duration: 3.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    .start-background {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 180px;
+      height: 180px;
+      border-radius: 180px;
+      box-sizing: border-box;
+      opacity: 0;
+    }
+    .start-border {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 180px;
+      height: 180px;
+      border-radius: 180px;
+      box-sizing: border-box;
+      border: 2px transparent solid;
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      animation-name: start-heartbeat;
+      animation-delay: 3.5s;
+      animation-duration: 3.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-out;
+    }
+    .start-text {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 180px;
+      height: 180px;
+      border-radius: 180px;
+      box-sizing: border-box;
+      white-space: nowrap;
+      opacity: 1;
+      font-size: 25px;
+    }
+  }
+}
+.start-button a:focus .start-border,
+.start-button a:hover .start-border {
+  background-image: linear-gradient(
+      rgba(20, 21, 38, 0.95),
+      rgba(20, 21, 38, 0.95)
+    ),
+    linear-gradient(to bottom, #2de5d1, #1fa4e9);
+  animation: none;
+}
+/* ============================= keyframes ============================= */
+@keyframes start-ring {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  12.5% {
+    opacity: 0;
+    transform: scale(0.995);
+  }
+  16.667% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes start-heartbeat {
+  0% {
+    transform: scale(1);
+  }
+
+  8.333% {
+    transform: scale(0.989);
+  }
+  16.667% {
+    transform: scale(1);
+  }
+}
