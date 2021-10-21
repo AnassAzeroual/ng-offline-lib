@@ -66,7 +66,7 @@ export class AppModule { }
 
 ```html
 
-<div ngoffline (isOnline)="checkNetworkStatus($event)">
+<div (isOnline)="checkNetworkStatus($event)">
   this message will be displayed only if the status is offline
 </div>
 
