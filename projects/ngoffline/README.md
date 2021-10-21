@@ -9,7 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [Usage](#Usage)
 
 ## About
-> this package used to detect offline and online status and show or hide messages based on network status 
+> this package used to detect offline/online status and show/hide messages based on network status 
 ## Imports 
 
 ```js
