@@ -1,8 +1,12 @@
-<div>
-  <ngoffline></ngoffline>
-  <p ngoffline (isOnline)="checkNetworkStatus($event)"></p>
+<ngoffline (isOnline)="checkNetworkStatus($event)"></ngoffline>
 
-  <h1 style="text-align: center;color: azure;">Network connexion status is</h1>
+<div style="display: grid;">
+
+  <p ngoffline (isOnline)="checkNetworkStatus($event)">Off Line</p>
+  <p ngonline> On Line</p>
+
+  <div style="text-align: center;color: azure;font-size: 37px;
+  padding: 62px 0px;">Network connexion status is</div>
 
   <div [ngClass]="{'offline': !status,'connected': status}">
     <div class="start-button" style="margin-bottom: 160px">

@@ -1,23 +1,16 @@
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgOfflineComponent, NgOfflineDirective } from './ngoffline.component';
+import { NgModule } from '@angular/core';
+import { NgOfflineComponent, NgOfflineDirective, NgOnlineDirective } from './ngoffline.component';
 
 
-
+const features = [
+  NgOfflineComponent,
+  NgOfflineDirective,
+  NgOnlineDirective
+]
 @NgModule({
-  declarations: [
-    NgOfflineComponent,
-    NgOfflineDirective
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  exports: [
-    NgOfflineComponent,
-    NgOfflineDirective
-  ]
+  declarations: [...features],
+  imports: [BrowserModule],
+  exports: [...features]
 })
 export class NgofflineModule { }

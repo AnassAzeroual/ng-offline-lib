@@ -1,17 +1,16 @@
 {
-  "name": "@devtips/ngoffline",
-  "version": "12.3.12",
+  "name": "ngoffline2",
+  "version": "14.1.0",
   "author": "Anass Azeroual <azeroual.anass2015@gmail.com> (https://github.com/AnassAzeroual)",
   "license": "MIT",
   "keywords": [
-    "off",
-    "line",
     "offline",
-    "connection",
     "connexion",
     "devtips",
     "ngoffline",
-    "@devtips/ngoffline"
+    "network",
+    "angular",
+    "service"
   ],
   "repository": {
     "type": "git",

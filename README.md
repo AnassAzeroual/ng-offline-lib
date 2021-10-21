@@ -9,7 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [Usage](#Usage)
 
 ## About
-this package used to detect offline and online status and show or hide messages based on network status 
+> this package used to detect offline and online status and show or hide messages based on network status 
 ## Imports 
 
 ```js
@@ -20,7 +20,7 @@ this package used to detect offline and online status and show or hide messages 
   ],
   imports: [
     ...
-    NgofflineModule
+    NgofflineModule <--- here
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -37,13 +37,13 @@ export class AppModule { }
 <ngoffline></ngoffline>
 
 ```
-The default message is 'You are not connected', but you can change it
+> The default message is 'You are not connected', but you can change it
 
 ```html
 <ngoffline message="Custom message"></ngoffline>
 
 ```
-You can use directive to display or hide any html selector 
+> You can use directive to display or hide any html selector 
 
 ```html
 
@@ -51,15 +51,18 @@ You can use directive to display or hide any html selector
   this message will be displayed only if the status is offline
 </div>
 
+<div ngonline>
+  this message will be displayed only if the status is online
+</div>
+
 ```
-Network status output 
-return 'false' if the status Offline
+> Network status output return 'false' if the status Offline
 
 ```html
 <ngoffline (isOnline)="checkNetworkStatus($event)"></ngoffline>
 
 ```
-Or in the directive
+> Or in the directive
 
 ```html
 
