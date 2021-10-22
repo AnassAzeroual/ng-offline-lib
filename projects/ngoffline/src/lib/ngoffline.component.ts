@@ -8,6 +8,10 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
+
+/* -------------------------------------------------------------------------- */
+/*                            Component Ng Off Line                           */
+/* -------------------------------------------------------------------------- */
 @Component({
   selector: 'ngoffline',
   template: `
@@ -106,7 +110,7 @@ c-1962 1823 -3826 2779 -5767 2958 -194 18 -768 27 -955 15z"
 export class NgOfflineComponent {
   @Input('message') msg: string = 'You are not connected';
   @Output('isOnline') cnx = new EventEmitter<boolean>(true);
-  onLine: boolean = false; // is en ligne 🔥
+  onLine: boolean = true; // is en ligne 🔥
 
   constructor(private sanitizer: DomSanitizer) {
     window.addEventListener('online', (): void => {
@@ -122,6 +126,12 @@ export class NgOfflineComponent {
     });
   }
 }
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                 Ng Off Line                                */
+/* -------------------------------------------------------------------------- */
 
 @Directive({
   selector: '[ngoffline]',
@@ -156,6 +166,11 @@ export class NgOfflineDirective {
     this.onLine = false;
   }
 }
+
+
+/* -------------------------------------------------------------------------- */
+/*                                 Ng On Line                                 */
+/* -------------------------------------------------------------------------- */
 
 @Directive({
   selector: '[ngonline]',
